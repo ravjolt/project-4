@@ -1,7 +1,11 @@
 body {
+  background-color: pink;
   text-align: center;
 }
 
 .images {
   display: flex;
+}
+.hidden {
+  display: none;
 }

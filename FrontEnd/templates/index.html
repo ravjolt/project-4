@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="index.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/styles.css') }}"
+    />
+    <script src="{{ url_for('static',filename='js/index.js')}}"></script>
     <title>Heart Disease Analysis</title>
   </head>
-  
+
   <body>
     <h1>Heart Disease Analysis</h1>
     <form>
@@ -31,12 +34,46 @@
       <button type="submit">Submit</button>
     </form>
     <h2>Results</h2>
+    <select>
+      <option value="">choose graph</option>
+      <option value="images-age">age</option>
+      # value : is a type of attribute -
+      <option value="images-heart-rate">heart rate</option>
+      <option value="images-blood-pressure">blood pressure</option>
+      <option value="images-chest-pain">chest pain</option>
+    </select>
     <div class="results">
       <p>Heart attack percent:</p>
     </div>
     <div class="images">
-      <img src="./assets/Picture1.png" alt="Heart Rate Distribution" />
-      <img src="./assets/Picture2.png" alt="Heart Rate Distribution 2" />
+      <div class="images-heart-rate image hidden">
+        <img
+          src="{{ url_for('static',filename='assets/Picture1.png')}}"
+          alt="Heart Rate Distribution"
+        />
+        <p>heart rate heart rate</p>
+      </div>
+      <div class="images-blood-pressure image hidden">
+        <img
+          src="{{ url_for('static',filename='assets/Picture2.png')}}"
+          alt="Heart Rate Distribution 2"
+        />
+        <p>blood pressure</p>
+      </div>
+      <div class="images-age image">
+        <img
+          src="{{ url_for('static',filename='assets/Picture3.png')}}"
+          alt="Heart Rate Distribution 3"
+        />
+        <p>age age age</p>
+      </div>
+      <div class="images-chest-pain image hidden">
+        <img
+          src="{{ url_for('static',filename='assets/Picture4.png')}}"
+          alt="Heart Rate Distribution 4"
+        />
+        <p>chest pain</p>
+      </div>
     </div>
   </body>
 </html>
