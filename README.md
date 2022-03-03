@@ -26,24 +26,24 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
 ### Results:
 
 1. Pre-process
-Preprocessing
-![dataset.jpg](https://github.com/ghhyc/Project-4/blob/main/images/dataset.JPG)
+  Preprocessing
+  ![dataset.jpg](https://github.com/ghhyc/Project-4/blob/main/images/dataset.JPG)
 
-Postprocessing 
-![dataset2.jpg](https://github.com/ghhyc/Project-4/blob/main/images/dataset2.JPG)
+  Postprocessing 
+  ![dataset2.jpg](https://github.com/ghhyc/Project-4/blob/main/images/dataset2.JPG)
 
 2. Basic Inference from dataset
-Correlation Analysis - a basic visual to determine if relationships between categories can be made to determine if an individual is prone to heart attack.
+   Correlation Analysis - a basic visual to determine if relationships between categories can be made to determine if an individual is prone to heart attack.
 
-Heat map
-![heatmap.jpg](https://github.com/ghhyc/Project-4/blob/main/images/heatmpap.JPG)
----
-Pairplot
-![pairplot.jpg](https://github.com/ghhyc/Project-4/blob/main/images/pairplot.JPG)
+  Heat map
+  ![heatmap.jpg](https://github.com/ghhyc/Project-4/blob/main/images/heatmpap.JPG)
+  ---
+  Pairplot
+  ![pairplot.jpg](https://github.com/ghhyc/Project-4/blob/main/images/pairplot.JPG)
 
-### Model Comparison:
+  ### Model Comparison:
 
-Three models were choosen.
+  Three models were choosen.
 **Support Vector Machine - For flexibility in which it can solve both regression and classification.
 **RandomForest Classifier - Also flexibile where it can perform both regression and classification tasks.
 **Category Boosting (catboost) - Handling Categorical features automatically: We can use CatBoost without any explicit pre-processing to convert categories into numbers.
