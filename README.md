@@ -45,12 +45,17 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
   
     ![pairplot.jpg](https://github.com/ghhyc/Project-4/blob/main/images/pairplot.JPG)
 
-  ### Model Comparison:
+    ### Model Comparison:
 
-  Three models were choosen.
-**Support Vector Machine - For flexibility in which it can solve both regression and classification.
-**RandomForest Classifier - Also flexibile where it can perform both regression and classification tasks.
-**Category Boosting (catboost) - Handling Categorical features automatically: We can use CatBoost without any explicit pre-processing to convert categories into numbers.
+    Three models were choosen.
+    
+    **Support Vector Machine - For flexibility in which it can solve both regression and classification.
+    
+    **RandomForest Classifier - Also flexibile where it can perform both regression and classification tasks.
+    
+    **Category Boosting (catboost) - Handling Categorical features automatically: We can use CatBoost without any explicit pre-processing to convert categories into numbers.
+
+
 ---
 F1-score on Cross-Validation (CV) - Measuring test accuracy with test data
 ![model_comparison.jpg](https://github.com/ghhyc/Project-4/blob/main/images/model_comparision.JPG)
