@@ -58,16 +58,21 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
 
 ---
 F1-score on Cross-Validation (CV) - Measuring test accuracy with test data
+
 ![model_comparison.jpg](https://github.com/ghhyc/Project-4/blob/main/images/model_comparision.JPG)
+
 ---
 Verify F1-scores using test data
+
 ![f1_verify.jpg](https://github.com/ghhyc/Project-4/blob/main/images/f1_verify.JPG)
 
 AUC-ROC curve - yet another method to verify performance of models.
+
 ![roc_curve.jpg](https://github.com/ghhyc/Project-4/blob/main/images/roc_curve.JPG)
 ---
 
 **FINAL RESULTS**
+
 ![final.jpg](https://github.com/ghhyc/Project-4/blob/main/images/final.JPG)
 
 
