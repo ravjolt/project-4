@@ -40,9 +40,7 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
     Heat map
   
     ![heatmap.jpg](https://github.com/ghhyc/Project-4/blob/main/images/heatmpap.JPG)
-    
     ---
-    
     Pairplot
   
     ![pairplot.jpg](https://github.com/ghhyc/Project-4/blob/main/images/pairplot.JPG)
