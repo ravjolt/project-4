@@ -28,7 +28,7 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
 1. Pre-process
 Preprocessing
 ![dataset.jpg](https://github.com/ghhyc/Project-4/blob/main/images/dataset.JPG)
----
+
 Postprocessing 
 ![dataset2.jpg](https://github.com/ghhyc/Project-4/blob/main/images/dataset2.JPG)
 
