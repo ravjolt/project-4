@@ -56,24 +56,24 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
     **Category Boosting (catboost) - Handling Categorical features automatically: We can use CatBoost without any explicit pre-processing to convert categories into numbers.
 
 
----
-F1-score on Cross-Validation (CV) - Measuring test accuracy with test data
+    ---
+    F1-score on Cross-Validation (CV) - Measuring test accuracy with test data
 
-![model_comparison.jpg](https://github.com/ghhyc/Project-4/blob/main/images/model_comparision.JPG)
+    ![model_comparison.jpg](https://github.com/ghhyc/Project-4/blob/main/images/model_comparision.JPG)
 
----
-Verify F1-scores using test data
+    ---
+    Verify F1-scores using test data
 
-![f1_verify.jpg](https://github.com/ghhyc/Project-4/blob/main/images/f1_verify.JPG)
+    ![f1_verify.jpg](https://github.com/ghhyc/Project-4/blob/main/images/f1_verify.JPG)
 
-AUC-ROC curve - yet another method to verify performance of models.
+    AUC-ROC curve - yet another method to verify performance of models.
 
-![roc_curve.jpg](https://github.com/ghhyc/Project-4/blob/main/images/roc_curve.JPG)
----
+    ![roc_curve.jpg](https://github.com/ghhyc/Project-4/blob/main/images/roc_curve.JPG)
+    ---
 
-**FINAL RESULTS**
+    **FINAL RESULTS**
 
-![final.jpg](https://github.com/ghhyc/Project-4/blob/main/images/final.JPG)
+    ![final.jpg](https://github.com/ghhyc/Project-4/blob/main/images/final.JPG)
 
 
 
