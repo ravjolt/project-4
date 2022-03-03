@@ -38,9 +38,11 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
    Correlation Analysis - a basic visual to determine if relationships between categories can be made to determine if an individual is prone to heart attack.
 
   Heat map
+  
   ![heatmap.jpg](https://github.com/ghhyc/Project-4/blob/main/images/heatmpap.JPG)
   ---
   Pairplot
+  
   ![pairplot.jpg](https://github.com/ghhyc/Project-4/blob/main/images/pairplot.JPG)
 
   ### Model Comparison:
