@@ -65,6 +65,7 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
     Verify F1-scores using test data
 
     ![f1_verify.jpg](https://github.com/ghhyc/Project-4/blob/main/images/f1_verify.JPG)
+    ---
 
     AUC-ROC curve - yet another method to verify performance of models.
 
