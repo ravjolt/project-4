@@ -1,11 +1,29 @@
 body {
-  background-color: pink;
+  background-color: white;
   text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5%;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5%;
 }
 
 .images {
   display: flex;
 }
+
 .hidden {
   display: none;
 }

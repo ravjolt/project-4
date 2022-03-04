@@ -4,39 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="index.js"></script>
     <title>Heart Disease Analysis</title>
   </head>
-  
+
   <body>
-    <h1>Heart Disease Analysis</h1>
-    <form>
-      <input type="number" name="age" placeholder="Enter your age" />
-      <input
-        type="number"
-        name="heart_rate"
-        placeholder="Enter your heart rate"
-      />
-      <input
-        type="number"
-        name="chest_pain"
-        placeholder="Enter your chest pain (1 - 5)"
-      />
-      <input
-        type="number"
-        name="resting_blood_pressure"
-        placeholder="Enter your resting blood pressure (1 - 300)"
-      />
-      <button type="submit">Submit</button>
-    </form>
-    <h2>Results</h2>
-    <div class="results">
-      <p>Heart attack percent:</p>
-    </div>
-    <div class="images">
-      <img src="./assets/Picture1.png" alt="Heart Rate Distribution" />
-      <img src="./assets/Picture2.png" alt="Heart Rate Distribution 2" />
+    <div class="container">
+      <h1>Heart Disease Predictor</h1>
+
+      <h2>Results :</h2>
+      <div class="results">
+        {% if prediction == 1 %}
+        <h3>You probably have heart disease</h1>
+        {% else %}
+        <h3>You probably don't have heart disease</h1>
+        {% endif %}
+      </div>
     </div>
   </body>
 </html>

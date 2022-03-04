@@ -8,72 +8,234 @@
       rel="stylesheet"
       href="{{ url_for('static',filename='styles/styles.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <script src="{{ url_for('static',filename='js/index.js')}}"></script>
-    <title>Heart Disease Analysis</title>
+    <title>Heart Disease Predictor</title>
   </head>
 
   <body>
-    <h1>Heart Disease Analysis</h1>
-    <form>
-      <input type="number" name="age" placeholder="Enter your age" />
-      <input
-        type="number"
-        name="heart_rate"
-        placeholder="Enter your heart rate"
-      />
-      <input
-        type="number"
-        name="chest_pain"
-        placeholder="Enter your chest pain (1 - 5)"
-      />
-      <input
-        type="number"
-        name="resting_blood_pressure"
-        placeholder="Enter your resting blood pressure (1 - 300)"
-      />
-      <button type="submit">Submit</button>
-    </form>
-    <h2>Results</h2>
-    <select>
-      <option value="">choose graph</option>
-      <option value="images-age">age</option>
-      # value : is a type of attribute -
-      <option value="images-heart-rate">heart rate</option>
-      <option value="images-blood-pressure">blood pressure</option>
-      <option value="images-chest-pain">chest pain</option>
-    </select>
-    <div class="results">
-      <p>Heart attack percent:</p>
-    </div>
-    <div class="images">
-      <div class="images-heart-rate image hidden">
-        <img
-          src="{{ url_for('static',filename='assets/Picture1.png')}}"
-          alt="Heart Rate Distribution"
-        />
-        <p>heart rate heart rate</p>
-      </div>
-      <div class="images-blood-pressure image hidden">
-        <img
-          src="{{ url_for('static',filename='assets/Picture2.png')}}"
-          alt="Heart Rate Distribution 2"
-        />
-        <p>blood pressure</p>
-      </div>
-      <div class="images-age image">
-        <img
-          src="{{ url_for('static',filename='assets/Picture3.png')}}"
-          alt="Heart Rate Distribution 3"
-        />
-        <p>age age age</p>
-      </div>
-      <div class="images-chest-pain image hidden">
-        <img
-          src="{{ url_for('static',filename='assets/Picture4.png')}}"
-          alt="Heart Rate Distribution 4"
-        />
-        <p>chest pain</p>
-      </div>
+    <div class="container">
+      <h1>Heart Disease Predictor</h1>
+      <p>
+        This prediction only a test for school project for full fill the
+        requirement of Demystifying Machine Learning. This application we use
+        Python Pandas, HTML/CSS/Bootstrap and Heroku for hosting the
+        application. The data set is from kaggle.com with over 1000 records. It
+        does not intent to diagnose any Disease. Thank you for visiting our
+        website.
+      </p>
+      <!--set the request method to POST -->
+
+      <form method="POST">
+        <div class="form-group row">
+          <label for="age" class="col-4 col-form-label">Age</label>
+          <div class="col-8">
+            <input
+              id="age"
+              name="age"
+              type="text"
+              required="required"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4">Sex</label>
+          <div class="col-8">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                name="your_sex"
+                id="your_sex_0"
+                type="radio"
+                required="required"
+                class="custom-control-input"
+                value="1"
+              />
+              <label for="your_sex_0" class="custom-control-label">Male</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                name="your_sex"
+                id="your_sex_1"
+                type="radio"
+                required="required"
+                class="custom-control-input"
+                value="0"
+              />
+              <label for="your_sex_1" class="custom-control-label"
+                >Female</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="select" class="col-4 col-form-label">Chest pain</label>
+          <div class="col-8">
+            <select
+              id="select"
+              name="chest_pain"
+              required="required"
+              class="custom-select"
+            >
+              <option value="1">typical angina</option>
+              <option value="2">atypical angina</option>
+              <option value="3">non-angina pain</option>
+              <option value="4">asymptomatic</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="resting_bp" class="col-4 col-form-label"
+            >resting blood pressure</label
+          >
+          <div class="col-8">
+            <input
+              id="resting_bp"
+              name="resting_bp"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="cholesterol" class="col-4 col-form-label"
+            >Cholesterol</label
+          >
+          <div class="col-8">
+            <input
+              id="cholesterol"
+              name="cholesterol"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="fasting_blood_sugar" class="col-4 col-form-label"
+            >Fasting blood sugar</label
+          >
+          <div class="col-8">
+            <input
+              id="fasting_blood_sugar"
+              name="fasting_blood_sugar"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="max_heart_rate" class="col-4 col-form-label"
+            >Max heart rate</label
+          >
+          <div class="col-8">
+            <input
+              id="max_heart_rate"
+              name="max_heart_rate"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="resting_ecg" class="col-4 col-form-label"
+            >Resting electrocardiogram results</label
+          >
+          <div class="col-8">
+            <select
+              id="resting_ecg"
+              name="resting_ecg"
+              class="custom-select"
+              required="required"
+            >
+              <option value="0">normal</option>
+              <option value="1">having ST-T wave abnormality</option>
+              <option value="2">
+                showing probable or definite left ventricular hypertrophy by
+                Estes' criteria
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4">Exercise induced angina</label>
+          <div class="col-8">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                name="exercise_angina"
+                id="exercise_angina_0"
+                type="radio"
+                class="custom-control-input"
+                value="1"
+                required="required"
+              />
+              <label for="exercise_angina_0" class="custom-control-label"
+                >yes</label
+              >
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                name="exercise_angina"
+                id="exercise_angina_1"
+                type="radio"
+                class="custom-control-input"
+                value="0"
+                required="required"
+              />
+              <label for="exercise_angina_1" class="custom-control-label"
+                >no</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="oldpeak" class="col-4 col-form-label">oldpeak</label>
+          <div class="col-8">
+            <input
+              id="oldpeak"
+              name="oldpeak"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="ST_slope" class="col-4 col-form-label"
+            >the slope of the peak exercise ST segment</label
+          >
+          <div class="col-8">
+            <select
+              id="ST_slope"
+              name="ST_slope"
+              class="custom-select"
+              required="required"
+            >
+              <option value="1">upsloping</option>
+              <option value="2">flat</option>
+              <option value="3">downsloping</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">
+              Predict Heart Disease
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>
