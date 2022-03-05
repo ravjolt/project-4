@@ -1,0 +1,34 @@
+a.top-navbar-text-latitude{
+    margin-left: 0px;
+    padding: 5px;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Bodoni, serif;
+}
+a.top-navbar-text-latitude-2{
+    margin-left: 5px;
+    padding: 5px;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Bodoni, serif;
+}
+
+
+@mixin transition($transition...) {
+    @if $enable-transitions {
+      @if length($transition) == 0 {
+        transition: $transition-base;
+      } @else {
+        transition: $transition;
+      }
+    }
+  
+    @if $enable-prefers-reduced-motion-media-query {
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+  }
+  
