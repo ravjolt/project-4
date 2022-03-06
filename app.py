@@ -3,13 +3,12 @@ import pandas as pd
 from flask import (
         Flask, render_template, request
         )
-from flask_navigation import Navigation
+
 app = Flask(__name__, template_folder='FrontEnd/templates')
 app.config['ENV'] = 'development'
 app.config['DEBUG'] = True
 app.config['TESTING'] = True
 
-nav = Navigation(app)
 
 
 #added route to Jonathan's home page
