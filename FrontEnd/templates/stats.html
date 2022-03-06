@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
-  <link href="https://fonts.googleapis.com/css?family=Mea Culpa" rel="stylesheet">
-  <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" /> -->
-<!--   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Meddon" /> -->
-  <link rel="stylesheet" href=".../static/styles/stylesheet.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--link rel="stylesheet" href="{{ url_for('static',filename='styles_1/styles.css') }}"-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/stylesheet.css')}}">
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
@@ -20,28 +21,139 @@
     const popperInstance = Popper.createPopper(button, tooltip);
   </script>
 
-    <title>Heart Disease Statistical Analysis</title>
+<style>
+  body,h1,h5 {font-family: "Lato", sans-serif}
+  .w3-bar,h1 {font-family: "Montserrat", sans-serif}
+  </style>
+    <title>Heart Analysis</title>
   </head>
 
   <body>
-    <h1>Heart Disease Statistical Analysis</h1>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid ">
-          <a class="top-navbar-text-latitude bg-dark text-white" href="home.html" >Heart </a>
-          <a class="top-navbar-text-latitude-2 bg-dark text-white" href="index.html" >Heart Disease Predictor </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </button>
-          </nav>
-    <div class="text-black-fontsize-10px">
-      <h2> Statistical Analysis</h2>
-    </div>
+    <!-- Navbar -->
 
-              
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <nav class="navbar navbar-expand-lg navbar-light bg-red">
+      <div id="wrapper">
+    <!--a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a-->
+    <a href="{{ url_for('home_page')}}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+   
+        <!---a class="navbar-brand" href="#"></a-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item w3-bar-item w3-button w3-padding-small w3-red">
+              <a class="nav-link" style="color:black"; href="{{ url_for('stats')}}">Statistical Analysis</a>
+          </li>
+          <li class="nav-item w3-bar-item w3-button w3-padding-small w3-red">
+              <a class="nav-link" style="color:black"; href="{{ url_for('main_page')}}">Heart Disease Predictor</a>
+          </li>
+
+          </ul>
+      </div>
+    </div>
+      
+  </nav>
+  <header class="w3-container w3-red w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo">Heart Analysis</h1>
+  </header>
+ 
+  </div>
+  <h2 class="text-black-fontsize-40px font-weight-bold"> Heart Disease Statistical Analysis</h2>
+    <div class="text-black-fontsize-10px">
+      <p>This project analyzed the presence of heart disease in a patient based on their presented attributes. The dataset used is a combination 5 heart disease datasets (Cleveland, Long Beach VA, Switzerland, Hungary, and Statlog) that are independently available. It combines 12 common features. The combined dataset was found here https://ieee-dataport.org/open-access/heart-disease-dataset-comprehensive. Statistical analysis and machine learning were applied to this dataset.
+        Before going into the analysis, we will understand the dataset used.
+        The heart disease attributes and data descriptions are as follows:</p>
+      <div class="text-black-fontsize-5px">
+        <p> 1.	age - years </p>
+        <p>  2.	sex (0-female, 1-male)</p>
+        <p>  3.	chest_pain_typee -chest pain (0-asymptomatic, 1=typical angina, 2=atypical angina, 3=non-agina pain.</p>
+        <p>  4.	trtbps- resting blood pressure upon arrival to hospital (Hg/mm)</p>
+        <p>  5.	chol - cholestorol (mg/dl)</p>
+        <p>  6.	fbs - fasting blood sugar > 120 mg/dL (0=false, 1=true)</p>
+        <p>  7.	restecg - resting electro-cardiagram results (0=normal, 1=hyperthrophy, 2=having ST-T abnormal)</p>
+        <p>  8.	thalach - max. heart rate</p>
+        <p> 9.	exng - excercise induced angina (0=no, 1=yes)</p>
+        <p> 10.	oldpeak - ST depression induced by excercise relative to resting</p>
+        <p> 11.	slp - slope of peak ST (0=down, 1=flat, 2=up)</p>
+        <p> 12.	caa - vessel count (0-4) colored by flouroscopy</p>
+        <p> 13.	thall - thallium stress test (1=fixed defect, 2=reversable defect, 3=normal</p>
+        <p> 14.	ouput - 0=chance of heart attack is low, 1= chance of heart attack is high.</p>
+    </div>
+      <p>The dataset contains 1190 patient records, of which 748 were male (represented as 1) and 2270 were female (represented as 0). After removing null values, the data set was reduced to 1018 records. This reduction also removed some of the outliers that appear in the dataset.
+          The following graphs provide general statistical insight into the data.</p>
+       </div>
+    <div class="row">
+      <div class="column">
+          <img src="{{ url_for('static', filename='images/Stats_img_1.jpg')}}" alt="Stats_1" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="{{ url_for('static', filename='images/stats_img_2.jpg')}}"alt="stats_2" style="width:100%">
+
+            </div>
+    </div>
+    <div class="text-black-fontsize-10px">
+      <p>Next each feature was evaluated for significance by analyzing the distribution by the target. The target being whether the disease is present in the patient.
+      </p>
+      <p>The features that alone did not show any strong differences between target values were resting blood pressure, cholesterol, and fasting blood sugar. An overlap of the distribution curve was observed and a general reduction in patients with the disease were observed for these features. Where as with age, maximum heart rate, and oldpeak (ST depression induced by excercise relative to resting) there is a more defined separation of each curve from the non-diseased patients. For age, those higher in age were more likely to have had a heart attack than those who were younger. For maximum heart rate, it was shown that those whose heart rate was lower, averaging 125bps, were more likely to have the target disease. Those who did not have the target disease had an average maximum heart rate of ~160. Lastly for the oldpeak feature, a patient presented with an oldpeak > 1, they were more likely to have a heart attack.
+      </p>
+    </div>    
+    <div class="row">
+      <div class="column">
+          <img src="{{ url_for('static', filename='images/feature_evaluation.jpg')}}" alt="features" style="width:100%">
+
+        </div>
+    </div>
+    <div class="text-black-fontsize-10px">
+      <p>When looking at the prevalence of certain diseases, some key features to look for are age, which was evaluated above, and gender. The gender analysis showed that men were ~87% more likely to suffer from heart disease than women.
+        </p>
+      </div>    
+    <div class="row">
+      <div class="column">
+          <img src="{{ url_for('static', filename='images/age_heart_disease.jpg')}}" alt="age heart" style="width:100%">
           
-              </div>
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+    <div class="text-black-fontsize-10px">
+      <p>One of the key symptoms of a possible heart attack or heart disease is a pain, more specifically in the chest area. The data provided different types of pain typical angina, atypical angina, asymptomatic, and non-anginal pain. These pain profiles were evaluated to see which was most observed in patients with heart disease.
+        </p>
+      </div>    
+    <div class="row">
+      <div class="column">
+          <img src=" {{ url_for('static', filename='images/heart_chest_pain_eval.jpg')}}" alt="heart chest pain" style="width:100%">
+          
+        </div>
+    </div>
+    <div class="text-black-fontsize-10px">
+      <p>From the charts above, those with non-anginal pain, described as chest pain that does not meet the criteria of angina (painful squeezing sensation in chest area), are more likely to be suffering from heart disease. For low risk pain sufferers, those who who have atypical angina or typical angina 
+      </p>
+      </div> 
+      <div class="text-black-fontsize-10px">
+        <p>A final correlation was done across all features to analyze the combination of features and their relation to the presence of heart disease. The heatmap below illustrates the correlation evaluation for the features
+          </p>
+        </div>    
+      <div class="row">
+        <div class="column">
+            <img src="{{ url_for('static', filename='images/heatmpap.jpg')}}" alt="heatmap" style="width:100%">
+          </div>
+      </div>
+      <div class="text-black-fontsize-10px">
+        <p>The resting ecg, fasting blood sugar, max heart rate, and cholesterol had the lowest correlation to target as well as correlation to the other features. Age, chest pain type, exercise induced angina, oldpeak, and ST slope had the highest correlation to the target. Age, ST slope and oldpeak have the most consistent correlation across all features.
+        </p>
+        </div> 
+  <!--script src="https://code.jquery.com/jquery-2.1.3.min.js"></script-->
+  <!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script-->
+  <script type="text/javascript" src="static/logic.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </nav>
+  <div id="map"></div>
+
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/logic.js"></script>
+
   </body>
 </html>
