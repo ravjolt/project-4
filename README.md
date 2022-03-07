@@ -79,8 +79,8 @@ Postprocessing
 
     Here is an example of positive prediction
 
-    ![example of positive prediction](Heart disease predictor positive example.png)
+    ![positive_example.png](https://github.com/ghhyc/Project-4/blob/main/images/positive_example.png)
 
     Here is an example of negative prediction
 
-    ![example of negative prediction](Heart disease predictor negative example.png)
+    ![negative_example.png](https://github.com/ghhyc/project-4/blob/main/images/negative_example.png)
