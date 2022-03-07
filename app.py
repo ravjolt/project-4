@@ -3,13 +3,20 @@ import pandas as pd
 from flask import (
         Flask, render_template, request
         )
+
 app = Flask(__name__, template_folder='FrontEnd/templates')
 app.config['ENV'] = 'development'
 app.config['DEBUG'] = True
 app.config['TESTING'] = True
- 
 
-@app.route('/', methods=('GET', 'POST'))
+
+
+#added route to Jonathan's home page
+@app.route('/')
+def home_page():
+    return render_template("home.html")
+
+@app.route('/heart-disease-predictor', methods=('GET', 'POST'))
 def main_page():
     if request.method == 'POST':
         age = int(request.form['age'])
@@ -46,6 +53,11 @@ def main_page():
 
         return render_template('predict.html', prediction = prediction)
     return render_template('index.html')
-    
+
+#added route to Raven's statistic's page
+@app.route('/statistical-analysis')
+def stats():
+    return render_template("stats.html")
+
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000)
+  app.run(debug=True, host='0.0.0.0')

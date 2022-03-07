@@ -18,18 +18,72 @@
     />
 
     <script src="{{ url_for('static',filename='js/index.js')}}"></script>
-    <title>Heart Disease Predictor</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+  <script>
+    const button = document.querySelector('#button');
+    const tooltip = document.querySelector('#tooltip');
+    const popperInstance = Popper.createPopper(button, tooltip);
+  </script>
+
+<style>
+  body,h1,h5 {font-family: "Lato", sans-serif}
+  .w3-bar,h1 {font-family: "Montserrat", sans-serif}
+  </style>
+    <title>Heart Analysis</title>
   </head>
 
   <body>
+    <!-- navigation code to other html pages that connects through the app.py-->
+       <!-- Navbar -->
+
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <nav class="navbar navbar-expand-lg navbar-light bg-red">
+      <div id="wrapper">
+    <!--a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a-->
+    <a href="{{ url_for('home_page')}}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+   
+        <!---a class="navbar-brand" href="#"></a-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item w3-bar-item w3-button w3-padding-small w3-red">
+              <a class="nav-link" style="color:black"; href="{{ url_for('stats')}}">Statistical Analysis</a>
+          </li>
+          <li class="nav-item w3-bar-item w3-button w3-padding-small w3-red">
+              <a class="nav-link" style="color:black"; href="{{ url_for('main_page')}}">Heart Disease Predictor</a>
+          </li>
+
+          </ul>
+      </div>
+ 
+ 
+  </nav>
+</div>
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Heart Analysis</h1>
+</header>
+
     <div class="container">
-      <h1>Heart Disease Predictor</h1>
+      <h1 class="text-black-fontsize-40px font-weight-bold">Heart Disease Predictor</h1>
       <p>
         This prediction only a test for school project for full fill the
         requirement of Demystifying Machine Learning. This application we use
         Python Pandas, HTML/CSS/Bootstrap and Heroku for hosting the
-        application. The data set is from kaggle.com with over 1000 records. It
-        does not intent to diagnose any Disease. Thank you for visiting our
+        application. The dataset has over 1000 records from a combination of 5 heart disease independently available datasets 
+        (Cleveland, Long Beach VA, Switzerland, Hungary, and Statlog). It does not intent to diagnose any Disease. Thank you for visiting our
         website.
       </p>
       <!--set the request method to POST -->
@@ -237,5 +291,13 @@
         </div>
       </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+          </nav>
+    <div id="map"></div>
+
+    <!-- Our JavaScript -->
+    <script type="text/javascript" src="static/logic.js"></script>
   </body>
 </html>
