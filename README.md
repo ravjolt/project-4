@@ -23,6 +23,7 @@ As such, we have taken an existing dataset of cardiologist patients to build a p
 7. Seaborn
 8. Sklearn
 9. HTML/CSS/
+10. Heroku https://hrt-predict-app.herokuapp.com/
 
 ### Results:
 
