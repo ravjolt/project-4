@@ -82,4 +82,4 @@ Here is an example of positive prediction
 
 Here is an example of negative prediction
 
-![negative_example.png](./negative_example.png)
+![negative_example.png](./images/negative_example.png)
