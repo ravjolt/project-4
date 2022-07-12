@@ -75,13 +75,12 @@ Postprocessing
 
 ## Heart disease predictor
 
-    We trained a RandomForest model on a sample of the hospital data, and then created a web application that uses this model to predict
-    whether or not a patient has heart disease.
+We trained a RandomForest model on a sample of the hospital data, and then created a web application that uses this model to predict whether or not a patient has heart disease.
 
-    Here is an example of positive prediction
+Here is an example of positive prediction
 
-    ![positive_example.png](https://github.com/ghhyc/Project-4/blob/main/images/positive_example.png)
+![positive_example.png](./images/positive_example.png)
 
-    Here is an example of negative prediction
+Here is an example of negative prediction
 
-    ![negative_example.png](https://github.com/ghhyc/project-4/blob/main/images/negative_example.png)
+![negative_example.png](./images/negative_example.png)
